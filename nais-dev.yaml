@@ -19,7 +19,7 @@ spec:
     path: /internal/health/liveness
     initialDelay: 20
   replicas:
-    min: 0
+    min: 1
     max: 0 # Max 1 instance is required since in-memory session management is used
     cpuThresholdPercentage: 75
   resources:
@@ -43,18 +43,10 @@ spec:
         {
           "topics": [ 
             {
-              "name": "team-esyfo.varselbus",
-              "location": "AIVEN",
-              "keyDeserializerType": "STRING",
-              "valueDeserializerType": "STRING"
-            },
-            {
               "name": "teamsykmelding.syfo-sendt-sykmelding",
               "location": "AIVEN",
               "keyDeserializerType": "STRING",
               "valueDeserializerType": "STRING"
             }
-
-
           ]
         }
